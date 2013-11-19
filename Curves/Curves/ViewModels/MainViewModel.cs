@@ -8,6 +8,7 @@ using Curves.Helpers;
 using Curves.Types;
 using ExpressionEvaluatorNet;
 using OxyPlot;
+using OxyPlot.Axes;
 using OxyPlot.Series;
 
 namespace Curves.ViewModels
@@ -44,9 +45,18 @@ namespace Curves.ViewModels
 
         public MainViewModel()
         {
+            InitModel();
             Series.CollectionChanged += SeriesCollectionChanged;
 
             AddNewSeries();
+        }
+
+        private void InitModel()
+        {
+            var yAxis = new LinearAxis { MajorGridlineStyle = LineStyle.Solid, MinorGridlineStyle = LineStyle.Dot };
+            PlotModel.Axes.Add(yAxis);
+            var xAxis = new LinearAxis { MajorGridlineStyle = LineStyle.Solid, MinorGridlineStyle = LineStyle.Dot, Position = AxisPosition.Bottom };
+            PlotModel.Axes.Add(xAxis);
         }
 
         private void AddNewSeries()
