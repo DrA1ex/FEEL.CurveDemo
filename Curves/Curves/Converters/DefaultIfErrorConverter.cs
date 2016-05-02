@@ -13,14 +13,14 @@ namespace Curves.Converters
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (targetType == typeof(double))
+            if(targetType == typeof(double))
             {
                 double result;
                 double.TryParse(value.ToString(), out result);
 
                 return result;
             }
-            if (targetType == typeof(uint))
+            if(targetType == typeof(uint))
             {
                 int result;
                 int.TryParse(value.ToString(), out result);
@@ -28,7 +28,7 @@ namespace Curves.Converters
                 return result;
             }
 
-            throw new NotSupportedException(String.Format("Type {0} not supported!", targetType));
+            throw new NotSupportedException(string.Format("Type {0} not supported!", targetType));
         }
     }
 }

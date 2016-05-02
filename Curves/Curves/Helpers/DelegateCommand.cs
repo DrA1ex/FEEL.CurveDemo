@@ -3,9 +3,8 @@ using System.Windows.Input;
 
 namespace Curves.Helpers
 {
-    class DelegateCommand : ICommand
+    internal class DelegateCommand : ICommand
     {
-
         private readonly Action _action;
 
         public DelegateCommand(Action action)
@@ -26,9 +25,8 @@ namespace Curves.Helpers
         public event EventHandler CanExecuteChanged;
     }
 
-    class DelegateCommand<T> : ICommand
+    internal class DelegateCommand<T> : ICommand
     {
-
         private readonly Action<T> _action;
 
         public DelegateCommand(Action<T> action)

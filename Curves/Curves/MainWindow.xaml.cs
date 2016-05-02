@@ -4,8 +4,6 @@ namespace Curves
 {
     public partial class MainWindow
     {
-        private MainViewModel Model { get; set; }
-
         public MainWindow()
         {
             InitializeComponent();
@@ -13,5 +11,7 @@ namespace Curves
             Model = new MainViewModel();
             DataContext = Model;
         }
+
+        private MainViewModel Model { get; }
     }
 }
